@@ -109,10 +109,11 @@ module I18n
       end
 
       def upload_phrases(phrases)
-        skip, upload = phrases.partition{ |string_key, string| skip_key?(string_key) }
+        skip, upload = phrases.partition{ |string_key, string| skip_key?(string_key) || string.blank? }
 
         puts "Uploading strings:"
         puts "  count: #{upload.length}"
+
         platform.translation.input_phrases(upload)
       end
 

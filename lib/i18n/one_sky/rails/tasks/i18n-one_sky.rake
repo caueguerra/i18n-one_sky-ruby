@@ -55,7 +55,7 @@ namespace :one_sky do
   end
 
   def locales_path
-    Rails.root.join("config/locales")
+    Rails.root.join("lang/en")
   end
 
   def one_sky_config
